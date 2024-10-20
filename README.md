@@ -6,6 +6,8 @@ Exercise Project of `ZTM` Cours on Udemy ([JavaScript Web Projects: 20 Projects 
 
 Programmed in vanilla-js.
 
+![Kanban Board](./doc/img/KanbanBoard.png)
+
 ## Useful references
 
 - [CSS Tricks - Custom Scrollbars](https://css-tricks.com/the-current-state-of-styling-scrollbars-in-css/)

@@ -50,18 +50,12 @@ function updateSavedColumns() {
 
 // Filter Arrays to remove empty items
 function filterArray(array) {
-  // console.log(array);
   const filteredArray = array.filter(item => item !== null);
-  // console.log(filteredArray);
   return filteredArray;
 }
 
 // Create DOM Elements for each list item
 function createItemEl(columnEl, column, item, index) {
-  // console.log('columnEl:', columnEl);
-  // console.log('column:', column);
-  // console.log('item:', item);
-  // console.log('index:', index);
   // List Item
   const listEl = document.createElement('li');
   listEl.classList.add('drag-item');
@@ -116,29 +110,20 @@ function updateDOM() {
 
 // Update Item - Delete if necessary, or update Array value
 function updateItem(id, column) {
-  // console.log('index:', id);
-  // console.log('column:', column);
-  // console.log('listArrays[column]:', listArrays[column]);
-  // console.log('listArrays[column][index]:', listArrays[column][index]);
-  // console.log('listArrays[column][index].textContent:', listArrays[column][index].textContent);
   const selectedArray = listArrays[column];
-  // console.log('selectedArray:', selectedArray);
   const selectedColumnEl = listColumns[column].children;
-  // console.log('selectedColumnEl:', selectedColumnEl[id].textContent);
   if (!dragging) {
     if (!selectedColumnEl[id].textContent) {
       delete selectedArray[id];
     } else {
       selectedArray[id] = selectedColumnEl[id].textContent;
     }
-    // console.log(selectedArray);
     updateDOM();
   }
 }
 
 // Add to Column List, Reset Textbox
 function addToColumn(column) {
-  // console.log(addItems[column].textContent);
   const itemText = addItems[column].textContent;
   const selectedArray = listArrays[column];
   selectedArray.push(itemText);
@@ -163,8 +148,6 @@ function hideInputBox(column) {
 
 // Allows array to reflect drag and drop items
 function rebuildArrays() {
-  // console.log(backlogList.children);
-  // console.log(progressList.children);
   backlogListArray = [];
   for (let i = 0; i < backlogList.children.length; i++) {
     backlogListArray.push(backlogList.children[i].textContent);
@@ -187,7 +170,6 @@ function rebuildArrays() {
 // When Item Starts Dragging
 function drag(e) {
   draggedItem = e.target;
-  // console.log('draggedItem', draggedItem);
   dragging = true;
 }
 
